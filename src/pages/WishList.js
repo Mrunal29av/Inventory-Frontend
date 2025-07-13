@@ -6,7 +6,9 @@ export default function Wishlist() {
   const { token } = useAuth();
 
   useEffect(() => {
-    fetch('http://localhost:5009/api/wishlist', {
+        let base_url = "https://inventory-backend-g6ph.onrender.com";
+
+    fetch(`${base_url}/auth/wishlist`, {
       headers: { Authorization: token }
     })
       .then((res) => res.json())

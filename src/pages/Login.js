@@ -11,8 +11,9 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    let base_url = "https://inventory-backend-g6ph.onrender.com";
     e.preventDefault();
-    const res = await fetch('http://localhost:5009/api/auth/login', {
+    const res = await fetch(`${base_url}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
